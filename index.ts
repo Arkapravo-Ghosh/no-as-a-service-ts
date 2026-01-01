@@ -1,7 +1,10 @@
 import express from "express";
+import cors from "cors";
 import reasons from "./reasons.json";
 
 const app = express();
+app.use(cors());
+app.set("trust proxy", true);
 const PORT = Number(process.env.PORT) || 3000;
 
 // Random rejection reason endpoint
